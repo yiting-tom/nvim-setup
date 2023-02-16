@@ -1,5 +1,4 @@
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
@@ -56,7 +55,14 @@ return require('packer').startup(function(use)
             }
         end
     }
+    -- lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
+    -- Pretty fold
+    use('anuvyklack/pretty-fold.nvim')
     -- treesitter
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     -- cache navigator
@@ -69,5 +75,9 @@ return require('packer').startup(function(use)
     use("folke/zen-mode.nvim")
     -- git signs
     use ('lewis6991/gitsigns.nvim')
+    -- Chad tree
+    use('ms-jpq/chadtree')
+    -- Tagbar
+    use('preservim/tagbar')
 
 end)
