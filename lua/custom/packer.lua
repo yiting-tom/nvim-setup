@@ -67,5 +67,7 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     -- zen-mode
     use("folke/zen-mode.nvim")
+    -- git signs
+    use ('lewis6991/gitsigns.nvim')
 
 end)
