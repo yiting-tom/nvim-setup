@@ -50,7 +50,9 @@ return require('packer').startup(function(use)
 	use('ThePrimeagen/harpoon')
     -- undotree
     use('mbbill/undotree')
-    -- undotree
+    -- git wrapper
     use('tpope/vim-fugitive')
+    -- zen-mode
+    use("folke/zen-mode.nvim")
 
 end)
