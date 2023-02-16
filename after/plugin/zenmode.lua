@@ -13,4 +13,3 @@ vim.keymap.set("n", "<leader>zz", function()
     vim.wo.wrap = false
     ColorMyPencils()
 end)
-
