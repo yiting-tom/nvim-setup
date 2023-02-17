@@ -1,16 +1,16 @@
 require('rose-pine').setup({
 	--- @usage 'main' | 'moon'
 	dark_variant = 'main',
-	bold_vert_split = true,
-	dim_nc_background = true,
-	disable_background = true,
+	bold_vert_split = false,
+	dim_nc_background = false,
+	disable_background = false,
 	disable_float_background = false,
 	disable_italics = false,
 
 	--- @usage string hex value or named color from rosepinetheme.com/palette
 	groups = {
-		background = 'base',
-		panel = 'surface',
+		background = 'surface',
+		panel = 'overlay',
 		border = 'highlight_med',
 		comment = 'muted',
 		link = 'iris',
@@ -43,7 +43,6 @@ function ColorMyPencils(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
