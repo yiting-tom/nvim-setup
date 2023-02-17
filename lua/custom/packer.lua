@@ -58,13 +58,12 @@ return require('packer').startup(function(use)
         },
     }
 
-
     -- comment
     use ('numToStr/Comment.nvim')
-    -- Pretty fold
-    use('anuvyklack/pretty-fold.nvim')
+    -- fold
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
     -- treesitter
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     -- cache navigator
 	use('ThePrimeagen/harpoon')
     -- undotree
@@ -81,5 +80,4 @@ return require('packer').startup(function(use)
     use('preservim/tagbar')
     -- indent blankline
     use('lukas-reineke/indent-blankline.nvim')
-
 end)
