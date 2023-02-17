@@ -8,6 +8,10 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+    -- Fuzzy Finder (files, lsp, etc)
+    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+    pcall(require('telescope').load_extension, 'fzf')
 
 	-- rose-pine theme
 	use({
@@ -35,7 +39,14 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    -- Auto-completion
+    use { -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    }
 
+    -- comment
+    use ('numToStr/Comment.nvim')
     -- Pretty fold
     use('anuvyklack/pretty-fold.nvim')
     -- treesitter
@@ -54,12 +65,8 @@ return require('packer').startup(function(use)
     use('ms-jpq/chadtree')
     -- Tagbar
     use('preservim/tagbar')
+    -- indent blankline
+    use('lukas-reineke/indent-blankline.nvim')
 
-    -- LSP
-    use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-    }
 
 end)
