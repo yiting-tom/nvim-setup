@@ -57,7 +57,10 @@ return require('packer').startup(function(use)
             'folke/neodev.nvim',
         },
     }
-
+    -- windows manager
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+    end}
     -- comment
     use ('numToStr/Comment.nvim')
     -- fold
@@ -80,4 +83,8 @@ return require('packer').startup(function(use)
     use('preservim/tagbar')
     -- indent blankline
     use('lukas-reineke/indent-blankline.nvim')
+    -- global search
+    use('dyng/ctrlsf.vim')
+    -- image display
+    use('edluffy/hologram.nvim')
 end)
